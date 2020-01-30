@@ -1,3 +1,5 @@
+package domain;
+
 import lombok.Getter;
 
 @Getter
