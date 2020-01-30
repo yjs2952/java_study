@@ -1,4 +1,4 @@
-package domain;
+package ticket_sale;
 
 import lombok.extern.slf4j.Slf4j;
 

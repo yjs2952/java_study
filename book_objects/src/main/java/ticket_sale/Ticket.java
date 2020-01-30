@@ -1,4 +1,4 @@
-package domain;
+package ticket_sale;
 
 import lombok.Getter;
 
