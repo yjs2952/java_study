@@ -13,6 +13,7 @@ public class PasswordStrengthMeter {
         return STRONG;
     }
 
+    // 리팩토링
     private int getMetCriteriaCounts(String s) {
         int metCounts = 0;
         if (s.length() >= 8) metCounts++;
