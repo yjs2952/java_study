@@ -18,6 +18,10 @@ public class PayData {
         this.payAmount = payAmount;
     }
 
+    public static Builder builder(){
+        return new Builder();
+    }
+
     public static class Builder {
         private PayData data = new PayData();
 
