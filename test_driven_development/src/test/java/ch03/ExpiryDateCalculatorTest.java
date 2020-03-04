@@ -1,6 +1,5 @@
 package ch03;
 
-import com.sun.media.sound.SoftVoice;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -10,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ExpiryDateCalculatorTest {
 
     @Test
-    void 만원_납부시_한달뒤_만료일이_된다(){
+    void 만원_납부시_한달뒤_만료일이_된다() {
         LocalDate billingDate = LocalDate.of(2019, 3, 1);
         int payAmount = 10_000;
         assertExpiryDate(
@@ -31,7 +30,7 @@ public class ExpiryDateCalculatorTest {
     }
 
     @Test
-    void 납부일과_한달_뒤_일자가_다르다(){
+    void 납부일과_한달_뒤_일자가_다르다() {
         assertExpiryDate(
                 PayData.builder()
                         .billingDate(LocalDate.of(2019, 1, 31))
@@ -41,7 +40,7 @@ public class ExpiryDateCalculatorTest {
     }
 
     @Test
-    void 첫_납부일과_만료일_일자가_다를때_만원_납부(){
+    void 첫_납부일과_만료일_일자가_다를때_만원_납부() {
         PayData payData = PayData.builder()
                 .firstBillingDate(LocalDate.of(2019, 1, 31))
                 .billingDate(LocalDate.of(2019, 2, 28))
@@ -68,7 +67,7 @@ public class ExpiryDateCalculatorTest {
     }
 
     @Test
-    void 이만원_이상_납부하면_비례해서_만료일_계산(){
+    void 이만원_이상_납부하면_비례해서_만료일_계산() {
         assertExpiryDate(
                 PayData.builder()
                         .billingDate(LocalDate.of(2019, 3, 1))
@@ -85,7 +84,7 @@ public class ExpiryDateCalculatorTest {
     }
 
     @Test
-    void 첫_납부일과_만료일_일자가_다를때_이만원_이상_납부(){
+    void 첫_납부일과_만료일_일자가_다를때_이만원_이상_납부() {
         assertExpiryDate(
                 PayData.builder()
                         .firstBillingDate(LocalDate.of(2019, 1, 31))
@@ -109,6 +108,17 @@ public class ExpiryDateCalculatorTest {
                         .payAmount(30_000)
                         .build()
                 , LocalDate.of(2019, 7, 31));
+    }
+
+    @Test
+    void 십만원_납부하면_1년_제공() {
+        assertExpiryDate(
+                PayData.builder()
+                        .billingDate(LocalDate.of(2019, 1, 28))
+                        .payAmount(100_000)
+                        .build()
+                , LocalDate.of(2020, 1, 28)
+        );
     }
 
     private void assertExpiryDate(PayData payData, LocalDate expectedExpiryDate) {
