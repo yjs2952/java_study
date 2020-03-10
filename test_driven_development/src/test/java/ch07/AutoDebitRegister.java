@@ -21,7 +21,7 @@ public class AutoDebitRegister {
         AutoDebitInfo info = repository.findOne(req.getUserId());
 
         if (info != null) {
-            info.changeCardnumber(req.getCardNumber());
+            info.changeCardNumber(req.getCardNumber());
         } else {
             AutoDebitInfo newInfo = new AutoDebitInfo(req.getUserId(), req.getCardNumber(), LocalDateTime.now());
             repository.save(newInfo);
