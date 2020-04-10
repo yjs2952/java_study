@@ -11,6 +11,7 @@
     <modules>
         <module>book_objects</module>
         <module>test_driven_development</module>
+        <module>book_design_pattern</module>
     </modules>
 
     <properties>
