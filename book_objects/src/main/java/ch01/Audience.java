@@ -1,9 +1,8 @@
-package ticket_sale;
+package ch01;
 
 import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
+@Getter
 public class Audience {
 
     private Bag bag;

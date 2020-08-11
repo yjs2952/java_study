@@ -1,4 +1,4 @@
-package ticket_sale;
+package ch01;
 
 import java.time.LocalDateTime;
 
