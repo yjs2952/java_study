@@ -13,6 +13,7 @@
         <module>test_driven_development</module>
         <module>book_design_pattern</module>
         <module>inflearn_the_java</module>
+        <module>book_practical_modern_java</module>
     </modules>
 
     <properties>
